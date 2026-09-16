@@ -41,7 +41,7 @@ function EmployeeForm() {
   return (
     <div className="container form-page">
       <h1>{isEditing ? "Edit Employee" : "Add Employee"}</h1>
-      <form onSubmit={handleSubmit}  className="xyzz">
+      <form onSubmit={handleSubmit} className="xyzz">
         <div>
           <label>Name</label>
           <input value={name} onChange={(e) => setName(e.target.value)} />
@@ -55,12 +55,14 @@ function EmployeeForm() {
           <input value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="form-actions">
-          <button type="submit" className="btn">
-            Save
-          </button>
-          <Link to="/" className="btn btn-secondary">
-            Cancel
-          </Link>
+          <div>
+            <button type="submit" className="btn">
+              Save
+            </button>
+            <Link to="/" className="btn btn-secondary">
+              Cancel
+            </Link>
+          </div>
         </div>
       </form>
     </div>
