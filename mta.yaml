@@ -36,5 +36,5 @@ modules:
       builder: custom
       commands:
         - npm install
-        - REACT_APP_API_URL=https://employee-api-srv.cfapps.eu10-004.hana.ondemand.com/employees npm run build
+        - npm run build
       build-result: build
