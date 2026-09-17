@@ -1,0 +1,40 @@
+_schema-version: '3.1'
+ID: employee-management-api
+version: 1.0.0
+
+modules:
+  - name: employee-api-srv
+    type: nodejs
+    path: .
+    parameters:
+      memory: 256M
+      disk-quota: 512M
+      buildpack: nodejs_buildpack
+      command: node src/server.js
+      routes:
+        - route: employee-api-srv.cfapps.eu10-004.hana.ondemand.com
+    build-parameters:
+      builder: npm
+      ignore:
+        - client/
+        - node_modules/
+        - coverage/
+        - test/
+        - .git/
+        - .github/
+
+  - name: employee-api-app
+    type: staticfile
+    path: client
+    parameters:
+      memory: 128M
+      disk-quota: 256M
+      buildpack: staticfile_buildpack
+      routes:
+        - route: employee-api-app.cfapps.eu10-004.hana.ondemand.com
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - REACT_APP_API_URL=https://employee-api-srv.cfapps.eu10-004.hana.ondemand.com/employees npm run build
+      build-result: build
