@@ -37,17 +37,7 @@ function EmployeeForm() {
     }
     navigate("/");
   }
-    async function handleSubmittt(e){
-    e.preventDefault();
-    const data = { name, role, email };
-    if (isEditing) {
-      await updateEmployee(id, data);
-    } else {
-      await createEmployee(data);
-    }
-    navigate("/");
-  }
-
+   
   return (
     <div className="container form-page">
       <h1>{isEditing ? "Edit Employee" : "Add Employee"}</h1>
