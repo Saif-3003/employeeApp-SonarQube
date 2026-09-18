@@ -62,7 +62,7 @@ function EmployeeForm() {
             <Link to="/" className="btn btn-secondary">
               Cancel
             </Link>
-          
+          </div>
         </div>
       </form>
     </div>
