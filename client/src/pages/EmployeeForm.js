@@ -37,6 +37,16 @@ function EmployeeForm() {
     }
     navigate("/");
   }
+    async function handleSubmittt(e){
+    e.preventDefault();
+    const data = { name, role, email };
+    if (isEditing) {
+      await updateEmployee(id, data);
+    } else {
+      await createEmployee(data);
+    }
+    navigate("/");
+  }
 
   return (
     <div className="container form-page">
