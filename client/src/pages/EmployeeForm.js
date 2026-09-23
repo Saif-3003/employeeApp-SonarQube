@@ -37,7 +37,7 @@ function EmployeeForm() {
     }
     navigate("/");
   }
-   
+
   return (
     <div className="container form-page">
       <h1>{isEditing ? "Edit Employee" : "Add Employee"}</h1>
@@ -55,14 +55,12 @@ function EmployeeForm() {
           <input value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="form-actions">
-          <div>
-            <button type="submit" className="btn">
-              Save
-            </button>
-            <Link to="/" className="btn btn-secondary">
-              Cancel
-            </Link>
-          </div>
+          <button type="submit" className="btn">
+            Save
+          </button>
+          <Link to="/" className="btn btn-secondary">
+            Cancel
+          </Link>
         </div>
       </form>
     </div>
