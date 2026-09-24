@@ -51,7 +51,7 @@ function EmployeeForm() {
           <input value={role} onChange={(e) => setRole(e.target.value)} />
         </div>
         <div>
-          <label>Email</label>
+          <label>Emai.</label>
           <input value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="form-actions">
