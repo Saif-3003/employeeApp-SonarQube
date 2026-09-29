@@ -43,7 +43,7 @@ function EmployeeForm() {
       <h1>{isEditing ? "Edit Employee" : "Add Employee"}</h1>
       <form onSubmit={handleSubmit} className="xyzz">
         <div>
-          <label>Name</label>
+          <label>Namee</label>
           <input value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <div>
